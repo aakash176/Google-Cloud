@@ -1,0 +1,1 @@
+1. To create virtual machine in a specific zone in default network = gcloud compute instances create vm-name --zone zone-name 
