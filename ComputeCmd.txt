@@ -1,1 +1,4 @@
-1. To create virtual machine in a specific zone in default network = gcloud compute instances create vm-name --zone zone-name 
+To create virtual machine in a specific zone in default network = gcloud compute instances create vm-name --zone zone-name
+To create new disk(data disk which can be attached to vm) = gcloud compute disks create diskname --size --type --zone
+after runnig above command, you will just be creating new disk but it won't be attched to any vm. To attach this newly created disk to any vm run the following command- gcloud compute instances attach-disk instanceName --disk diskname
+To increase boot disk size in created vms without stopping the vm = gcloud compute disks resize instnae-name --size=size(example: 10gb, 15gb, 20gb)
