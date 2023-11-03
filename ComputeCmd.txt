@@ -2,3 +2,7 @@ To create virtual machine in a specific zone in default network = gcloud compute
 To create new disk(data disk which can be attached to vm) = gcloud compute disks create diskname --size --type --zone
 after runnig above command, you will just be creating new disk but it won't be attched to any vm. To attach this newly created disk to any vm run the following command- gcloud compute instances attach-disk instanceName --disk diskname
 To increase boot disk size in created vms without stopping the vm = gcloud compute disks resize instnae-name --size=size(example: 10gb, 15gb, 20gb)
+to switch to root user= sudo -s
+You cannot use the disk just by attaching it to the instance, you first have to format the disk and mount it to any path.
+command to format(for this switch to root user) = mkfs.ext4 /dev/sdb
+command to mount = mount -o rw /dev/sdb /mnt/disk/localssd (you have to create a directory /mnt/disk/localssd)
