@@ -1,0 +1,4 @@
+gcloud container clusterS create NAME ZONE TYPE
+kubectl create deployment DEPLOYMENT --image=IMAGE
+kubectl edit deployment DEPLOYMENT
+kubectl create service loadbalancer DEPLOYMENT --tcp=port:containerport
