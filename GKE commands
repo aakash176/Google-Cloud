@@ -1,4 +1,11 @@
 gcloud container clusterS create NAME ZONE TYPE
-kubectl create deployment DEPLOYMENT --image=IMAGE
+kubectl create deployment DEPLOYMENT --image=IMAGE --replicas = 1 (replicas is the number of pods)
 kubectl edit deployment DEPLOYMENT
 kubectl create service loadbalancer DEPLOYMENT --tcp=port:containerport
+gcloud container clusters resize CLUSTER_NAME --node-pool=NAME --num-nodes=NUMBER --zone=NAME
+kubectl scale deployment DEPLOYMENT-NAME --replicas=NUMBER
+kubectl edit deployments.apps CLUSTER-NAME
+kubectl autoscale deployment cli-deploy --min=1 --max=5 --cpu-percent=50
+kubectl get pods -o wide
+kubectl get hpa
+gcloud container clusters update CLUSTER_NAME --enable-autoscaling --min-nodes=1 --max-nodes=10 --node-pool=default-pool
