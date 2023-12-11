@@ -6,3 +6,4 @@ to switch to root user= sudo -s
 You cannot use the disk just by attaching it to the instance, you first have to format the disk and mount it to any path.
 command to format(for this switch to root user) = mkfs.ext4 /dev/sdb
 command to mount = mount -o rw /dev/sdb /mnt/disk/localssd (you have to create a directory /mnt/disk/localssd)
+gcloud builds submit -t PATH-OF-REPOSITORY
